@@ -1,0 +1,212 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+:root{
+
+/* ### Primary */
+
+--Linear-Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+
+/* ### Neutral */
+
+--Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+--Light-Grayish-Blue: hsl(234, 14%, 74%);
+--Grayish-Blue: hsl(233, 13%, 49%);
+--Dark-Grayish-Blue: hsl(232, 13%, 33%);
+/* 
+## Typography
+
+### Body Copy */
+
+--Font-size: 15px;
+--ff-montserrat: 'Montserrat', sans-serif;
+}
+
+
+
+*{
+    font-family: var(--ff-montserrat);
+    font-weight: 700;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 15px;
+}
+body {
+    background-color: var(--Very-Light-Grayish-Blue);
+    background-image: url(../images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position: 150% 0%;
+    background-size:50vw 80vh;
+    min-height: 100vh;
+    width: 100%;
+    padding-bottom: 4rem;
+}
+
+header{
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    padding: 3rem;
+}
+    header h1 {
+        color: var(--Grayish-Blue);
+    }
+    header .toggle-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--Light-Grayish-Blue);
+        font-size: 0.9rem;
+    }
+
+main {
+    width: 90%;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 2rem;
+}
+    main >div {
+        padding:2rem ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 5px 5px 10px 0px hsl(234, 14%, 74%,0.3);
+    }
+    .item2 {
+        background-image:linear-gradient(hsl(236, 72%, 79%) ,hsl(237, 63%, 64%));
+    }
+        .plan {
+            color: var(--Grayish-Blue);
+            
+        }
+        .item2 .plan {
+            color: var(--Very-Light-Grayish-Blue);
+        }
+        .price {
+            color: var(--Dark-Grayish-Blue);
+            font-size: clamp(2rem,15vw,5rem);
+        }
+        .item2 .price {
+            color: var(--Very-Light-Grayish-Blue);
+        }
+        ul {
+            width: 100%;
+            list-style-type: none;
+            text-align: center;
+        }
+            ul li {
+                
+                color: var(--Grayish-Blue);
+                padding-block: 1rem;
+                border-top: 1px solid hsl(234, 14%, 74%,0.4);
+            }
+            .item2 ul li {
+                color: var(--Very-Light-Grayish-Blue);
+            }
+            ul li:last-child {
+                border-bottom: 1px solid hsl(234, 14%, 74%,0.4);
+            }
+        .learnmore-btn {
+            margin-top: 1rem;
+            padding: 1rem;
+            width: 100%;
+            color: var(--Very-Light-Grayish-Blue);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            border: 0px;
+            background-image: linear-gradient(90deg,hsl(236, 72%, 79%) ,hsl(237, 63%, 64%));
+        }
+        .learnmore-btn:hover{
+            cursor: pointer;
+            background-image: none;
+            background-color: white;
+            color: var(--Dark-Grayish-Blue);
+            border: 1px solid hsl(237, 63%, 64%);
+        }
+        .item2 .learnmore-btn {
+            background-image: none;
+            background-color: var(--Very-Light-Grayish-Blue);
+            color: hsl(237, 63%, 64%);
+            
+        }
+        .item2 .learnmore-btn:hover{
+            background-color: hsl(237, 63%, 64%);
+            border:1px solid var(--Very-Light-Grayish-Blue);
+            color: var(--Very-Light-Grayish-Blue);
+        }
+
+footer {
+    padding-block: 1rem;
+}
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+
+
+
+
+@media screen and (min-width:500px) {
+    main {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width:700px) {
+    body{
+        background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+        background-repeat: no-repeat,no-repeat;
+        background-position: top right ,bottom left;
+        background-size:30vw 80vh,20vw 20vw;
+    }
+
+    main {
+        width: 90%;
+        grid-template-columns: repeat(2,1fr);
+    }
+        .item3 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            align-self: center;
+            justify-self: center;
+            width: 50%;
+        }
+        .price {
+            font-size: clamp(2rem,5vw,5rem);
+        }
+}
+
+@media screen and (min-width:1000px) {
+    main {
+        width: 90%;
+        grid-template-columns: repeat(3,1fr);
+        gap: 0;
+    }
+        .item1 {
+            align-self: center;
+        }
+        .item3 {
+            grid-column-start: auto;
+            grid-column-end: auto;
+            align-self: center;
+            justify-self: unset;
+            width: auto;
+        }
+        .item2 {
+            padding-block: 3.5rem;
+        }
+
+
+}
+
+@media screen and (min-width:1200px) {
+    main {
+        width: 75%;      
+    }
+}
