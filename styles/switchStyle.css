@@ -44,7 +44,9 @@
   input:focus + .slider {
     box-shadow: 0 0 1px #2196F3;
   }
-  
+  .slider:hover {
+    background: linear-gradient(90deg,hsl(236, 72%, 79%,.7) ,hsl(237, 63%, 64%,.7));
+  }
   input:checked + .slider:before {
     -webkit-transform: translateX(1.4rem);
     -ms-transform: translateX(1.4rem);
